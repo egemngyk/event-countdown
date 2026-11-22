@@ -1,0 +1,306 @@
+{
+  "layout": {
+    "type": "layout",
+    "pages": [
+      "pageEvent",
+      "pageGeneral"
+    ],
+    "pageEvent": {
+      "type": "page",
+      "title": "Event / Olay",
+      "sections": [
+        "secEventDetails",
+        "secEventDate",
+        "secEventTime",
+        "secEventDisplay"
+      ]
+    },
+    "secEventDetails": {
+      "type": "section",
+      "title": "Event Information / Olay Bilgisi",
+      "keys": [
+        "eventName"
+      ]
+    },
+    "secEventDate": {
+      "type": "section",
+      "title": "Target Date (Required) / Hedef Tarih (Zorunlu)",
+      "keys": [
+        "eventDay",
+        "eventMonth",
+        "eventYear"
+      ]
+    },
+    "secEventTime": {
+      "type": "section",
+      "title": "Target Time (Optional) / Hedef Saat (Opsiyonel)",
+      "keys": [
+        "eventIncludeHour",
+        "eventHour",
+        "eventMinute"
+      ]
+    },
+    "secEventDisplay": {
+      "type": "section",
+      "title": "Display Mode / Gösterim Modu",
+      "keys": [
+        "displayMode",
+        "useDecimals"
+      ]
+    },
+    "pageGeneral": {
+      "type": "page",
+      "title": "Appearance / Genel",
+      "sections": [
+        "secAppearance",
+        "secSize",
+        "secColors",
+        "secFrame",
+        "secTitle"
+      ]
+    },
+    "secAppearance": {
+      "type": "section",
+      "title": "Appearance",
+      "keys": [
+        "language",
+        "compact"
+      ]
+    },
+    "secSize": {
+      "type": "section",
+      "title": "Size",
+      "keys": [
+        "width",
+        "height",
+        "fontSize",
+        "uiScale"
+      ]
+    },
+    "secColors": {
+      "type": "section",
+      "title": "Colors",
+      "keys": [
+        "bgColor",
+        "cardBgColor",
+        "textColor",
+        "accentColor",
+        "borderColor"
+      ]
+    },
+    "secFrame": {
+      "type": "section",
+      "title": "Frame and transparency",
+      "keys": [
+        "opacity",
+        "borderWidth",
+        "borderRadius"
+      ]
+    },
+    "secTitle": {
+      "type": "section",
+      "title": "Desklet Title",
+      "keys": [
+        "deskletTitle"
+      ]
+    }
+  },
+  "eventName": {
+    "type": "entry",
+    "default": "Yeni Yıl",
+    "description": "Event Name / Olay Adı",
+    "tooltip": "Name or description of the event (e.g. Birthday, New Year, Vacation)"
+  },
+  "eventDay": {
+    "type": "spinbutton",
+    "default": 1,
+    "min": 1,
+    "max": 31,
+    "step": 1,
+    "units": "gün",
+    "description": "Day (Required) / Gün (Zorunlu)",
+    "tooltip": "Target day (1-31)"
+  },
+  "eventMonth": {
+    "type": "spinbutton",
+    "default": 1,
+    "min": 1,
+    "max": 12,
+    "step": 1,
+    "units": "ay",
+    "description": "Month (Required) / Ay (Zorunlu)",
+    "tooltip": "Target month (1-12)"
+  },
+  "eventYear": {
+    "type": "spinbutton",
+    "default": 2027,
+    "min": 2020,
+    "max": 2100,
+    "step": 1,
+    "units": "yıl",
+    "description": "Year (Required) / Yıl (Zorunlu)",
+    "tooltip": "Target year (e.g. 2027)"
+  },
+  "eventIncludeHour": {
+    "type": "switch",
+    "default": false,
+    "description": "Specify Time (Optional) / Saat Belirt (Opsiyonel)",
+    "tooltip": "Enable to specify a target hour and minute"
+  },
+  "eventHour": {
+    "type": "spinbutton",
+    "default": 0,
+    "min": 0,
+    "max": 23,
+    "step": 1,
+    "units": "saat",
+    "dependency": "eventIncludeHour",
+    "description": "Hour / Saat (0-23)",
+    "tooltip": "Target hour (0-23)"
+  },
+  "eventMinute": {
+    "type": "spinbutton",
+    "default": 0,
+    "min": 0,
+    "max": 59,
+    "step": 1,
+    "units": "dk",
+    "dependency": "eventIncludeHour",
+    "description": "Minute / Dakika (0-59)",
+    "tooltip": "Target minute (0-59)"
+  },
+  "displayMode": {
+    "type": "combobox",
+    "default": "breakdown",
+    "description": "Display Mode / Gösterim Modu",
+    "tooltip": "Show countdown in breakdown cards or in a single specific unit",
+    "options": {
+      "Ayrıntılı Kartlar (Yıl, Ay, Hafta, Gün)": "breakdown",
+      "Yıl cinsinden (In Years)": "years",
+      "Ay cinsinden (In Months)": "months",
+      "Hafta cinsinden (In Weeks)": "weeks",
+      "Gün cinsinden (In Days)": "days",
+      "Saat cinsinden (In Hours)": "hours"
+    }
+  },
+  "useDecimals": {
+    "type": "switch",
+    "default": true,
+    "description": "Buçuklu / Ondalıklı Gösterim (Decimal Mode)",
+    "tooltip": "Açıkken buçuklu (örn: 1.5 Ay), kapalıyken küçüğü şeklinde (örn: 1 Ay 15 Gün) gösterir."
+  },
+  "accentColor": {
+    "type": "colorchooser",
+    "default": "rgb(79,157,222)",
+    "description": "Accent color"
+  },
+  "cardBgColor": {
+    "type": "colorchooser",
+    "default": "rgba(255,255,255,0.08)",
+    "description": "Card background color"
+  },
+  "language": {
+    "type": "combobox",
+    "default": "tr",
+    "description": "Language",
+    "tooltip": "Language of the desklet interface",
+    "options": {
+      "Türkçe": "tr",
+      "English": "en"
+    }
+  },
+  "deskletTitle": {
+    "type": "entry",
+    "default": "",
+    "description": "Custom header title",
+    "tooltip": "Custom title shown in the top bar. Leave empty to use event name."
+  },
+  "textColor": {
+    "type": "colorchooser",
+    "default": "rgb(236,238,242)",
+    "description": "Text color"
+  },
+  "opacity": {
+    "type": "scale",
+    "default": 92,
+    "min": 10,
+    "max": 100,
+    "step": 1,
+    "description": "Background opacity (%)"
+  },
+  "uiScale": {
+    "type": "combobox",
+    "default": 100,
+    "description": "UI scale",
+    "options": {
+      "%75": 75,
+      "%90": 90,
+      "%100": 100,
+      "%110": 110,
+      "%125": 125,
+      "%150": 150,
+      "%175": 175,
+      "%200": 200
+    }
+  },
+  "borderWidth": {
+    "type": "spinbutton",
+    "default": 1,
+    "min": 0,
+    "max": 8,
+    "step": 1,
+    "units": "px",
+    "description": "Border width"
+  },
+  "bgColor": {
+    "type": "colorchooser",
+    "default": "rgb(28,30,36)",
+    "description": "Background color"
+  },
+  "fontSize": {
+    "type": "spinbutton",
+    "default": 13,
+    "min": 8,
+    "max": 28,
+    "step": 1,
+    "units": "px",
+    "description": "Font size"
+  },
+  "width": {
+    "type": "spinbutton",
+    "default": 360,
+    "min": 200,
+    "max": 2400,
+    "step": 10,
+    "units": "px",
+    "description": "Width"
+  },
+  "height": {
+    "type": "spinbutton",
+    "default": 180,
+    "min": 100,
+    "max": 1600,
+    "step": 10,
+    "units": "px",
+    "description": "Height"
+  },
+  "borderColor": {
+    "type": "colorchooser",
+    "default": "rgba(255,255,255,0.15)",
+    "description": "Border color"
+  },
+  "compact": {
+    "type": "switch",
+    "default": false,
+    "description": "Compact view"
+  },
+  "borderRadius": {
+    "type": "spinbutton",
+    "default": 14,
+    "min": 0,
+    "max": 40,
+    "step": 1,
+    "units": "px",
+    "description": "Corner radius"
+  }
+}

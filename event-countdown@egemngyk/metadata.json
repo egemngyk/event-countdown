@@ -1,0 +1,10 @@
+{
+    "uuid": "event-countdown@egemngyk",
+    "name": "Event Countdown",
+    "description": "Event countdown desklet with configurable date/time, breakdown cards and unit mode toggle.",
+    "version": "1.0.0",
+    "icon": "icon.png",
+    "max-instances": "50",
+    "website": "https://github.com/egemngyk",
+    "license": "MIT"
+}

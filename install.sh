@@ -2,7 +2,7 @@
 # Cinnamon desklet install script
 set -euo pipefail
 
-UUID="desklet-template@egemngyk"
+UUID="event-countdown@egemngyk"
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$UUID"
 DEST="${XDG_DATA_HOME:-$HOME/.local/share}/cinnamon/desklets/$UUID"
 CFG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/cinnamon/spices/$UUID"
@@ -21,9 +21,10 @@ rm -rf "$DEST"
 cp -r "$SRC" "$DEST"
 echo "Installed: $DEST"
 
-# Always clear cached settings so layout changes take effect immediately
-rm -f "$CFG_DIR"/*.json
-echo "Settings cache cleared."
+if [[ "${1:-}" == "--reset-settings" ]]; then
+    rm -f "$CFG_DIR"/*.json
+    echo "Settings cache cleared."
+fi
 
 # Reload desklet in Cinnamon
 if command -v gdbus > /dev/null 2>&1; then

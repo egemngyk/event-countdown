@@ -1,0 +1,50 @@
+/* Event Countdown Desklet Stylesheet */
+
+.event-root {
+    transition-duration: 150ms;
+}
+
+.event-header {
+    spacing: 8px;
+}
+
+.event-title {
+    font-weight: bold;
+}
+
+.event-subtitle {
+    opacity: 0.75;
+}
+
+.event-cards-container {
+    spacing: 6px;
+}
+
+.event-card {
+    text-align: center;
+    transition-duration: 150ms;
+}
+
+.event-card-val {
+    font-weight: bold;
+    text-align: center;
+}
+
+.event-card-unit {
+    text-align: center;
+    font-weight: 600;
+}
+
+.event-mode-btn, .event-format-btn {
+    border-radius: 6px;
+    padding: 3px 8px;
+    transition-duration: 120ms;
+}
+
+.event-mode-btn:hover, .event-format-btn:hover {
+    brightness: 1.25;
+}
+
+.event-mode-btn:active, .event-format-btn:active {
+    brightness: 0.9;
+}
