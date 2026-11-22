@@ -5,6 +5,6 @@
     "version": "1.0.0",
     "icon": "icon.png",
     "max-instances": "50",
-    "website": "https://github.com/egemngyk",
+    "website": "https://github.com/egemngyk/event-countdown",
     "license": "MIT"
 }

@@ -1,6 +1,6 @@
 {
-    "name": "Desklet Template",
+    "name": "Event Countdown",
     "version": "1.0.0",
-    "description": "A clean, modular, and modern starter template for developing Linux Mint Cinnamon desklets with hot-reload theming and boxed settings schema.",
+    "description": "Configurable event countdown desklet for Linux Mint Cinnamon with breakdown cards, single-unit modes, decimal/sub-unit display, TR/EN UI and customizable styling.",
     "screenshot": ""
 }
