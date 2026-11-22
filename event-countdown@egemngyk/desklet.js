@@ -45,17 +45,7 @@ const I18N = {
         passed: 'Süre Doldu',
         today: 'BUGÜN!',
         targetPrefix: 'Hedef: ',
-        formatDecimal: '½ Buçuklu',
-        formatSubUnit: '▾ Küçüğü',
         totalDaysLabel: function (d) { return 'Toplam ' + d + ' gün'; },
-        modes: {
-            breakdown: 'Kartlar',
-            years: 'Yıl',
-            months: 'Ay',
-            weeks: 'Hafta',
-            days: 'Gün',
-            hours: 'Saat'
-        },
         totalDaysApprox: function (d) { return 'Toplam ~' + d + ' gün'; },
         monthsShort: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara']
     },
@@ -75,17 +65,7 @@ const I18N = {
         passed: 'Time Passed',
         today: 'TODAY!',
         targetPrefix: 'Target: ',
-        formatDecimal: '½ Decimal',
-        formatSubUnit: '▾ Sub-unit',
         totalDaysLabel: function (d) { return 'Total ' + d + ' days'; },
-        modes: {
-            breakdown: 'Cards',
-            years: 'Years',
-            months: 'Months',
-            weeks: 'Weeks',
-            days: 'Days',
-            hours: 'Hours'
-        },
         totalDaysApprox: function (d) { return 'Total ~' + d + ' days'; },
         monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     }
@@ -358,12 +338,11 @@ MyDesklet.prototype = {
             y_align: Clutter.ActorAlign.START
         });
 
-        // Small Mode Button ("küçük mod tuşu")
+        // Small Mode Button ("küçük mod tuşu") — icon only
         const currentMode = this.cfg_displayMode || 'breakdown';
-        const modeLabelText = t.modes[currentMode] || currentMode;
 
         const modeBtn = new St.Button({
-            label: '⇋ ' + modeLabelText,
+            label: '⇋',
             reactive: true,
             can_focus: true,
             style_class: 'event-mode-btn',
@@ -385,7 +364,7 @@ MyDesklet.prototype = {
         // Small Format Button ("buçuklu mu yoksa küçüğü şeklinde mi")
         const isDecimal = this.cfg_useDecimals !== false;
         const formatBtn = new St.Button({
-            label: isDecimal ? t.formatDecimal : t.formatSubUnit,
+            label: isDecimal ? '½' : '▾',
             reactive: true,
             can_focus: true,
             style_class: 'event-format-btn',
