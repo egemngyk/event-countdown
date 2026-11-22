@@ -254,7 +254,8 @@ MyDesklet.prototype = {
         const pad = compact ? '8px 12px;' : '12px 16px;';
 
         this._root.style =
-            'width:'            + w  + 'px;' +
+            // No fixed/max width: grow with content, cfg_width is only the floor.
+            'min-width:'        + w  + 'px;' +
             'min-height:'       + h  + 'px;' +
             'font-size:'        + fs + 'px;' +
             'color:'            + fg + ';' +
